@@ -20,20 +20,22 @@ export default function Product({
     );
 
     function handleFavorite() {
-        const currentFavorites =
-        JSON.parse(localStorage.getItem("favorites")) || [];
+        const currentFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
         const newFavorites = [...currentFavorites];
-        console.log(currentFavorites);
         if (isFavorited) {
-            const index = newFavorites.findIndex((e) => e.id === id);
-            newFavorites.splice(index, 1);
-            setIsFavorited(false);
+          const index = newFavorites.findIndex(e => e.id === id);
+          newFavorites.splice(index, 1);
+          setIsFavorited(false);
+          localStorage.setItem("favorites", JSON.stringify(newFavorites));
+          setFavorites(newFavorites);
+          window.location.reload();
         } else {
-            newFavorites.push({ id, productName, productImage, productDescription, productPrice });
-            setIsFavorited(true);
+          newFavorites.push({ id, productName, productImage, productDescription,productPrice });
+          setIsFavorited(true);
+          localStorage.setItem("favorites", JSON.stringify(newFavorites));
+          setFavorites(newFavorites);
         }
-        localStorage.setItem("favorites", JSON.stringify(newFavorites));
-    };
+      }
 
 
     return (
