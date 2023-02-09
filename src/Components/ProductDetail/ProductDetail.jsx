@@ -131,6 +131,7 @@ function ProductDetail() {
                 </button>
               )}
               <button
+                className="button-ProductDetails"
                 disabled={loadingButton === false ? true : false}
                 onClick={handleClick}
               >
@@ -149,7 +150,7 @@ function ProductDetail() {
                 <button onClick={subtractionHandler} value="-"></button>
               )}
             </div>
-            {mensaje}
+            <div className="messageCart">{mensaje}</div>
           </div>
 
           <div className="protectedPurchase">

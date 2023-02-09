@@ -69,6 +69,7 @@
 }
 .FedEx {
     height: 50px;
+    margin: 0 auto;
 }
 .button-ProductDetails {
     width: 200px;
@@ -77,6 +78,9 @@
     color: white;
     font-size: 18px;
     margin: 20px 0 0 0;
+}
+.messageCart {
+    margin: 0 auto;
 }
 
 .button-ProductDetails:hover {
