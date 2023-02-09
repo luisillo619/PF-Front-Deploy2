@@ -192,6 +192,7 @@ export const addFilter = (filter) => {
 // response solo va a estar disponible 1 sola vez, debido a que el auth almacena cookies en el back y solo retorna la info una sola vez al front hasta que pase 1 hora
 export const getUser = (setUser, setOrder) => async () => {
   try {
+    console.log("me quiero autenticar por google")
     const response = await fetch(`${REACT_APP_API_URL}/auth/login/success`, {
       method: "GET",
       credentials: "include",
@@ -201,6 +202,7 @@ export const getUser = (setUser, setOrder) => async () => {
         "Access-Control-Allow-Credentials": false,
       },
     });
+    console.log("me quiero logre autenticar")
 
     if (response.status === 200) {
       const userInfo = await response.json();
