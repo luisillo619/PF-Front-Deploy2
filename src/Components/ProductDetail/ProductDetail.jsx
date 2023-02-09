@@ -125,10 +125,29 @@ function ProductDetail() {
             <div className="container-CartButton">
               {count}
               <br />
-              {count < 10 && ( <button className="button-MdAdd" onClick={handlerSums}> <MdAdd /> </button> )}
-              <button disabled={loadingButton === false ? true: false } onClick={handleClick}> AÑADIR AL CARRITO </button>
-              {count > 1 && ( <button className="button-AiOutlineMinus" onClick={subtractionHandler} ><AiOutlineMinus /> </button> )}
-              {count > 1 && ( <button onClick={subtractionHandler} value="-"> </button> )}
+              {count < 10 && (
+                <button className="button-MdAdd" onClick={handlerSums}>
+                  <MdAdd />
+                </button>
+              )}
+              <button
+                disabled={loadingButton === false ? true : false}
+                onClick={handleClick}
+              >
+                AÑADIR AL CARRITO
+              </button>
+              {count > 1 && (
+                <button
+                  className="button-AiOutlineMinus"
+                  onClick={subtractionHandler}
+                >
+                  <AiOutlineMinus />
+                </button>
+              )}
+
+              {count > 1 && (
+                <button onClick={subtractionHandler} value="-"></button>
+              )}
             </div>
             {mensaje}
           </div>
