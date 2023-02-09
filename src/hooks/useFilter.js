@@ -24,10 +24,13 @@ function useFilter(filterValidations) {
   };
 
   function nameOptions(allProducts, search) {
-    const filteredPokemons = allProducts.filter((allProducts) =>
+    if(allProducts){
+      const filteredPokemons = allProducts.filter((allProducts) =>
       allProducts.name.toLowerCase().includes(search.toLowerCase())
     );
     return filteredPokemons.map((e) => <option key={e.name} value={e.name} />);
+    }
+   return allProducts
   }
 
   return {
