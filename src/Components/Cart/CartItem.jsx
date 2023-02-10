@@ -5,35 +5,40 @@ import { useDispatch } from "react-redux";
 import { putToCart } from "../../redux/actions";
 import { BsFillTrashFill } from "react-icons/bs";
 import './CartItem.css';
+import Swal from "sweetalert2";
 
-
-function CartItem({ image, product, quantity, unitPrice,id }) {
+function CartItem({ image, product, quantity, unitPrice,id}) {
   const dispatch = useDispatch();
 
   const [loading, setLoading] = useState(true);
   const [count, setCount] = useState(1);
-
+  const [cantidad,setCantidad] = useState(quantity)
   const subtractionHandler = () => {
     const DECREMENT = "decrement";
     dispatch(putToCart(DECREMENT, product, unitPrice, setLoading));
-    // setCount(false);
-    // if (count > 1) setCount(count - 1);
-    // if (cantidad > 1) setCantidad(cantidad - 1);
+     setCount(false);
+    if (count > 1) setCount(count - 1);
+     if (cantidad > 1) setCantidad(cantidad - 1);
   };
 
   const handlerSums = () => {
     const INCREMENT = "increment";
     dispatch(putToCart(INCREMENT, product, unitPrice, setLoading));
-    // setCount(false);
-    // if (count < 10) setCount(count + 1);
-    // if (cantidad < 10) setCantidad(cantidad + 1);
+     setCount(false);
+     if (count < 10) setCount(count + 1);
+    if (cantidad < 10) setCantidad(cantidad + 1);
   };
 
   const deleteProduct = (e) => {
     const DELETE = "delete";
-    // dispatch(putToCart(DELETE, product, unitPrice, setLoading));
+     dispatch(putToCart(DELETE, product, unitPrice, setLoading));
     console.log(e.target.value)
-  }
+       
+    Swal.fire({
+			title: "The product has been removed ",
+			icon: "warning",
+		})
+  };
 
   return (
     <div className="flex w-screen justify-center ">
@@ -74,7 +79,7 @@ function CartItem({ image, product, quantity, unitPrice,id }) {
             <p className="text-sm font-semibold text-gray-900 dark:text-black truncate">
               Sub-Total: USD {quantity * unitPrice}
             </p>
-            <button className='ButtonDeleteOrder' onClick={e=> deleteProduct(e)} value={id}>Borrar </button>
+            <button className='ButtonDeleteOrder' onClick={deleteProduct} value={id}>Borrar </button>
           </div>
 
           <br />

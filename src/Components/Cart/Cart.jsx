@@ -32,7 +32,7 @@ function Cart() {
                   <CartItem
                     key={e._id}
                     id={e._id}
-                   
+                     name={e.name}
                     image={e.image}
                     product={e.product}
                     quantity={e.quantity}

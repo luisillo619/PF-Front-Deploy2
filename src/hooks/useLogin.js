@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { login, register } from "../redux/actions";
-
+import Swal from "sweetalert2";
 
 function useLogin(initialForm, validateForm) {
   const [form, setForm] = useState(initialForm);
@@ -30,7 +30,14 @@ function useLogin(initialForm, validateForm) {
     if (Object.keys(errors).length === 0) {
       setLoading(true);
       dispatch(login(form, setLoading,setResponse))
+      Swal.fire({
+              
+        text: 'Welcome!',
+        icon: 'success',
+        timer: 2000
+      })
     }
+   
   };
 
   const handleSubmitRegister = (e) => {
@@ -41,7 +48,14 @@ function useLogin(initialForm, validateForm) {
       console.log(form)
       setLoading(true);
       dispatch(register(form, setLoading,setResponse,setErrorRegister))
+      Swal.fire({
+              
+        text: 'Registered was successful',
+        icon: 'success',
+        timer: 2000
+      })
     }
+   
   };
 
   const handleBlur = (e) => {

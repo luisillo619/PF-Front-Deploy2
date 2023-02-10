@@ -17,11 +17,10 @@ export default function Product(props) {
 
     return (
         <div>
-                <div className="card">
+                <div className="card cursor-pointer" onClick={handleClick} value={props.name}>
                 <img className="product-Image" src={props.url} alt="productimage" />
-            
                 <p>{props.description}</p>
-                <p><button onClick={handleClick} value={props.name}>{props.name}</button></p>
+                <p><button >{props.name}</button></p>
             </div>
         </div>
     );

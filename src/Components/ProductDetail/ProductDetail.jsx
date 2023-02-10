@@ -18,7 +18,7 @@ import BancoNacion from "../../assets/Banco Nacion.png";
 import GrupoAval from "../../assets/Grupo Aval.png";
 import "./ProductDetail.css";
 import { Reviews } from "./Reviews";
-
+import Swal from "sweetalert2";
 function ProductDetail() {
   const navigate = useNavigate();
   const idProduct = useParams().id;
@@ -29,6 +29,7 @@ function ProductDetail() {
   const [loadingButton, setLoadingButton] = useState(true);
   const [count, setCount] = useState(1);
   const userLogin = Cookies.get("user");
+  const name = productDetail.name;
   const userId = userLogin && JSON.parse(userLogin).id;
   const [mensaje, setMensaje] = useState(null);
   useEffect(() => {
@@ -44,26 +45,37 @@ function ProductDetail() {
         // setCount(1);
         setLoadingButton(false);
         const total = priceProduct * count;
-
+         
+      
         dispatch(
           addToCart(
             idProduct,
             userId,
             total,
             count,
-
+            name,
             priceProduct,
             productDetail.image,
             setLoadingButton,
             setMensaje
-          )
-        );
+            ));
+
+        Swal.fire({
+          title: `${name}`,
+          text: 'Added to your cart!',
+          icon: 'success',
+          timer: 2000
+        })
       } else alert("no hay che");
     } else navigate("/login");
   };
 
   const subtractionHandler = () => {
     if (count > 1) setCount(count - 1);
+    if(count <= 1){ Swal.fire({
+			title: "The quantity has been positive",
+			icon: "warning",
+		})}
   };
 
   const handlerSums = () => {
@@ -123,13 +135,28 @@ function ProductDetail() {
             </div>
             {loading}{" "}
             <div className="container-CartButton">
-              {count}
-              <br />
+              <div className="flex flex-row justify-center items-center ">
               {count < 10 && (
                 <button className="button-MdAdd" onClick={handlerSums}>
                   <MdAdd />
                 </button>
               )}
+              {count}
+              <br />
+              
+             
+                <button
+                  className="button-AiOutlineMinus"
+                  onClick={subtractionHandler}
+                >
+                  <AiOutlineMinus />
+                </button>
+             
+              
+                <button onClick={subtractionHandler} value="-"></button>
+              
+              </div>
+             
               <button
                 className="button-ProductDetails"
                 disabled={loadingButton === false ? true : false}
@@ -137,18 +164,6 @@ function ProductDetail() {
               >
                 AÑADIR AL CARRITO
               </button>
-              {count > 1 && (
-                <button
-                  className="button-AiOutlineMinus"
-                  onClick={subtractionHandler}
-                >
-                  <AiOutlineMinus />
-                </button>
-              )}
-
-              {count > 1 && (
-                <button onClick={subtractionHandler} value="-"></button>
-              )}
             </div>
             <div className="messageCart">{mensaje}</div>
           </div>
@@ -169,7 +184,7 @@ function ProductDetail() {
             </span>
           </div>
           <Link to="/category" style={{ textDecoration: "none" }}>
-            <button className="button-ProductDetails">VOLVER</button>
+            <button className="button-ProductDetails2">VOLVER</button>
           </Link>
 
           <div className="mt-10 flex flex-col justify-center items-center">

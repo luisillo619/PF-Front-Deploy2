@@ -6,7 +6,7 @@ import useLogin from "../../hooks/useLogin";
 import { Link } from "react-router-dom";
 import Loader from "../Loader/Loader";
 import Message from "../Loader/Message";
-
+import Swal from "sweetalert2";
 const { REACT_APP_API_URL } = process.env;
 //AGREGAR PROCESS.ENV
 
@@ -77,7 +77,7 @@ function Signup() {
 
   return (
     <>
-      <form onSubmit={handleSubmitRegister}>
+      <form onSubmit={handleSubmitRegister} >
         <div className="container-General__Login">
           <div className="register">
             <h1 className="loginTitle">Registrate</h1>
@@ -141,12 +141,16 @@ function Signup() {
                 </div>
                 {errorRegister && <p>{errorRegister}</p>}
                 {errors.all && <p>{errors.all}</p>}
-                <button
+                
+                <input
+                  type="submit"
+                 
+                  value="Registrate"
                   className="login-Submit"
                   disabled={loading === true ? true : false}
-                >
-                  Registrate
-                </button>
+                />
+    
+                
 
                 <p>
                   Tienes cuenta?{" "}

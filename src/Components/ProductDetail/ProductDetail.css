@@ -77,7 +77,17 @@
     background: #022957;
     color: white;
     font-size: 18px;
-    margin: 20px 0 0 0;
+    margin: 15px 0 0 0;
+    
+}
+.button-ProductDetails2 {
+    width: 200px;
+    height: 50px;
+    background: #022957;
+    color: white;
+    font-size: 18px;
+    margin: 100px 0 0 0;
+    
 }
 .messageCart {
     margin: 0 auto;
@@ -97,7 +107,12 @@
 }
 .button-MdAdd, .button-AiOutlineMinus {
     border: none;
-    margin: 10px;
+    margin-left: 13px;
+    margin-right: 13px;
+    background: #022957;
+    color: white;
+    padding: 1px;
+    border-radius: 5px;
     font-size: 20px;
     font-weight: bold;
 }

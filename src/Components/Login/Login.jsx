@@ -6,6 +6,7 @@ import Loader from "../Loader/Loader";
 import Message from "../Loader/Message";
 import useLogin from "../../hooks/useLogin";
 import "./Login.css";
+import Swal from "sweetalert2";
 const { REACT_APP_API_URL } = process.env;
 const initialForm = {
   email: "",
@@ -111,9 +112,10 @@ const Login = () => {
                   )}
                 </div>
                 <input
-                  className="login-Submit"
+                  className="login-Submit flex item-center self-center h-12 w-12"
                   type="submit"
                   value="Iniciar sesión"
+                  
                 />
 
                 <p>
