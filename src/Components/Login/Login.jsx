@@ -61,11 +61,14 @@ const Login = () => {
   };
 
   return (
-    <>
+    <> 
+       <div className="flex justify-center mt-2 text-lg">
+         <p>Login by Google,Facebook and Github are temporarily disabled.</p>
+       </div>
       <form onSubmit={handleSubmit}>
-        <div className="container-General__Login">
+        <div className="container-General__Login -mt-12">
           <div className="login">
-            <h1 className="loginTitle">Ingresa</h1>
+            <h1 className="loginTitle">Sing in</h1>
 
             <div className="wrapper">
               <div className="loginButtonsNetworks">
@@ -81,7 +84,7 @@ const Login = () => {
               </div>
               <div className="loginButtons-Email">
                 <div className="container-Email-Login">
-                  <p>Correo</p>
+                  <p>E-mail</p>
                   <input
                     className="login-Email"
                     type="text"
@@ -96,7 +99,7 @@ const Login = () => {
                 </div>
 
                 <div className="container-Password-Login">
-                  <p>Contraseña</p>
+                  <p>Password</p>
                   <input
                     className="login-Password"
                     type="password"
@@ -114,14 +117,14 @@ const Login = () => {
                 <input
                   className="login-Submit flex item-center self-center h-12 w-12"
                   type="submit"
-                  value="Iniciar sesión"
+                  value="Sign in"
                   
                 />
 
-                <p>
-                  Eres nuevo?{" "}
+                <p >
+                You are new?{" "}
                   <Link style={{ textDecoration: "none" }} to="/signup">
-                    Registrate
+                   Sign up
                   </Link>
                 </p>
               </div>

@@ -24,10 +24,10 @@ export default function PanelAdmin () {
         <div className='flex flex-col h-screen bg-white mt-4 rounded-lg justify-items-center shadow-xl'>
            
                 <div className='flex flex-col h-screen mt-4 rounded-lg justify-start items-center '>
-                    <h1>Bienvenido</h1>
+                    <h1>Welcome</h1>
                      <p>{adminUser?.userName}</p> 
                      {/* <p>{userInfo.admin}</p>  */}
-                    <h1>Panel del Administrador</h1>
+                    <h1>Admin Panel</h1>
                     
                <div className='flex flex-col item-center'>
                <SideBarAdmin/>

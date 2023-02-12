@@ -59,13 +59,10 @@ export default function LandingPage() {
       <div className="container-AboutUs__Landing">
         <h1>ABOUT US</h1>
         <div className="paragraph-AboutUs">
-          <h2>¿Quieres beber Mate como los dioses?.</h2>
+          <h2>Do you want to drink Mate like the gods?</h2>
           <p>
-            En el TeroExpress distribuimos una amplia gama de artículos de lujo
-            para beber Mate, nuestros productos son hechos artesanalmente por
-            manos laboriosas generadoras de emociones únicas como tu. Contamos
-            con 10 tiendas en América Latina y nuestra proyección es llegar a
-            toda Latam. Danos el placer de atenderte.
+        
+At TeroExpress we distribute a wide range of luxury items to drink Mate, our products are handcrafted by laborious hands that generate unique emotions like you. We have 10 stores in Latin America and our projection is to reach all of Latam. Give us the pleasure of serving you.
           </p>
         </div>
       </div>

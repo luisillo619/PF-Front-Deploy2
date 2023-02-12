@@ -24,9 +24,9 @@ function Select({ options, value, onChange, name }) {
       onChange={onChange}
     >
       {name === "productCategory" ? (
-        <option className="text-white bg-[#022957] bg-opacity-70 rounded-sm"  value="Categoria de mate">Categoria de mate</option>
+        <option className="text-white bg-[#022957] bg-opacity-70 rounded-sm "  value="Categoria de mate ">Mate category</option>
       ) : (
-        <option className="text-white bg-[#022957] bg-opacity-70 rounded-sm" value="Rango de precios">Rango de precios</option>
+        <option className="text-white bg-[#022957] bg-opacity-70 rounded-sm" value="Rango de precios">Prices ranges </option>
       )}
       {options.map((option) => (
         <option className="text-white bg-[#022957] bg-opacity-70 rounded-sm"
@@ -97,6 +97,7 @@ function NavBar({ userOrderCookies,userLoginCookies }) {
                     {nameOptions(products, filtersState.productName)}
                 </datalist>
                 <Select  options={categories} value={filtersState.productCategory} onChange={ handleChange } name="productCategory" />
+                <Link to="/panelAdmin"><button className="text-white font-medium tracking-wider">Admin Panel</button></Link>
                 <Select  options={priceRange} value={filtersState.productPrice} onChange={handleChange} name="productPrice" />
             </div>
         </div>

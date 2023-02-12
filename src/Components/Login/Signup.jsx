@@ -77,10 +77,13 @@ function Signup() {
 
   return (
     <>
+    <div className="flex justify-center mt-2 text-lg">
+         <p>Register by Google,Facebook and Github are temporarily disabled.</p>
+       </div>
       <form onSubmit={handleSubmitRegister} >
-        <div className="container-General__Login">
+        <div className="container-General__Login -mt-12">
           <div className="register">
-            <h1 className="loginTitle">Registrate</h1>
+            <h1 className="loginTitle">Sign up</h1>
             <div className="wrapper">
               <div className="loginButtonsNetworks">
                 <div className="loginButton-Google" onClick={google}>
@@ -111,7 +114,7 @@ function Signup() {
                 </div>
 
                 <div className="container-Username-Login">
-                  <p>Correo</p>
+                  <p>E-mail</p>
                   <input
                     className="login-Username"
                     type="text"
@@ -126,7 +129,7 @@ function Signup() {
                 </div>
 
                 <div className="container-Password-Login">
-                  <p>Contraseña</p>
+                  <p>Password</p>
                   <input
                     className="login-Password"
                     type="text"
@@ -145,7 +148,7 @@ function Signup() {
                 <input
                   type="submit"
                  
-                  value="Registrate"
+                  value="Sign up"
                   className="login-Submit"
                   disabled={loading === true ? true : false}
                 />
@@ -153,9 +156,9 @@ function Signup() {
                 
 
                 <p>
-                  Tienes cuenta?{" "}
+                You have an account?{" "}
                   <Link style={{ textDecoration: "none" }} to="/login">
-                    Ingresa
+                    Sing in
                   </Link>
                 </p>
               </div>
