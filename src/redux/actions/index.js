@@ -263,6 +263,7 @@ export const addToCart =
     idUser,
     total,
     count,
+    name,
     unitPrice,
     image,
     setLoadingButton,
@@ -278,7 +279,8 @@ export const addToCart =
       const { data } = await axios.post(
         url,
 
-        {
+        { 
+          name,
           product: idProduct,
           user: idUser,
           amount: count,
@@ -310,7 +312,7 @@ export const addToCart =
   };
 
 export const putToCart =
-  (action, idproduct, unitPrice, setLoading) => async (dispatch) => {
+  (action, idproduct, unitPrice, setLoading,name) => async (dispatch) => {
     const userLoginCookies = Cookies.get("user");
     const token = userLoginCookies && JSON.parse(userLoginCookies).token;
     const idUser = userLoginCookies && JSON.parse(userLoginCookies).id;
@@ -319,6 +321,7 @@ export const putToCart =
     const { data } = await axios.put(
       url,
       {
+        name:name,
         action,
         product: idproduct,
         user: idUser,

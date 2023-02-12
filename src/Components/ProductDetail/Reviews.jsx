@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCommentsProduct, postComment } from "../../redux/actions/index";
 import './Reviews.css';
+import Swal from "sweetalert2";
 
 
 const initialScore = { s1: false, s2: false, s3: false, s4: false, s5: false };
@@ -38,6 +39,12 @@ export const Reviews = () => {
     dispatch(postComment(commentInfo));
     setComment("");
     setScore(initialScore);
+    Swal.fire({
+              
+      text: 'Review has been added',
+      icon: 'success',
+      timer: 2000
+    })
   };
   // eesto ya se subioo ...
   const addStar = (rating) => {
