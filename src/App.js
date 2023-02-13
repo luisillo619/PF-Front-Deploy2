@@ -59,9 +59,9 @@ function App() {
   useEffect( () => {
     dispatch(getProducts());
     dispatch(getCategories());
-    setTimeout(()=>{
+
       dispatch(getUser(setUser,setOrder));
-    },2000) 
+
    dispatch(deleteCookies())
   }, [dispatch]);
 
