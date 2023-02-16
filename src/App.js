@@ -60,9 +60,9 @@ function App() {
     dispatch(getProducts());
     dispatch(getCategories());
 
-      setTimeout(()=>{
+   
       dispatch(getUser(setUser,setOrder));
-     },10000) 
+  
 
    dispatch(deleteCookies())
   }, [dispatch]);
